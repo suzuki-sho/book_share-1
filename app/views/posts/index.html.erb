@@ -1,0 +1,65 @@
+
+
+        <div class="top-image">
+            <img src="top-image.jpg" class="book-image">
+        </div>
+
+        <div class="top-comment">
+            <div class="ribbon6">
+                <h3>あなたのオススメの本をシェアしよう</h3>
+            </div>
+
+            <div class="box16">
+                <p>プログラミング学習で役に立った教科書<br>心が震えた自己啓発本<br>トリックに驚愕したミステリー小説等<br>なんでもOK！</p>
+            </div>
+
+            <div class="new-post">
+                <%= link_to("オススメの一冊を投稿","/posts/new", {class: "btn-gradient-3d-simple"}) %>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+            	<% @posts.each do |post| %>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <%= link_to("/posts/#{post.id}") do %>
+                    <div class="main-contents">
+                        <div class="main-image">
+                            <img src="http://images-jp.amazon.com/images/P/<%= post[:isbn_code] %>.09.LZZZZZZZ">
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="book-title">
+                                <p><%= link_to(post.book_title,"/posts/#{post.id}") %></p>
+                            </div>
+                            <div class="main-message">
+                                <p><%= post[:book_message] %></p>
+                            </div>
+
+                            <div class="left-container">
+                                <%= link_to("/posts/#{post.id}") do %>
+                                    <span class="fa fa-heart like_button"></span>：
+                                    <% if post.like_count == nil %>
+                                        0
+                                    <% else %>
+                                        <%= post.like_count %>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                            <div class="right-container">
+                                <img src="
+                                <% if post.user.twitter_image != nil %>
+                                    <%= "#{post.user.twitter_image}" %>
+                                <% else %>
+                                    <%= "/user_images/#{post.user.image_name}" %>
+                                <% end %>
+                                " class="user_image3">
+                                    
+                                <p class="main-user"><%= post.user.name %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+                <% end %>
+            </div>
+        </div>

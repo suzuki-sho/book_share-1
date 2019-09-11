@@ -1,0 +1,40 @@
+
+        <div class="new">
+            <div class="posts_top">
+                <p>投稿する</p>
+            </div>
+
+            <% @post.errors.full_messages.each do |message| %>
+                <div class="form-error">
+                    <%= message %>
+                </div>
+            <% end %>
+            
+            <div class="new_container">
+                <%= form_tag("/posts/create") do %>
+
+                <p class="midashi">本のタイトル</p>
+                <input type="text" class="form-control" name="book_title" value="<%= @post.book_title %>">
+
+                <p class="midashi">AmazonのURL</p>
+                <input type="text" class="form-control" name="amazon_url" value="<%= @post.amazon_url %>">
+
+                <p class="midashi">ISBN/ASINコード</p>
+                <input type="text" class="form-control" name="isbn_code" value="<%= @post.isbn_code %>">
+
+                <div class="hosoku">
+                    <p>※Amazonページの下部の登録情報に記載されているISBNコードを記入して下さい。</p>
+                    <img src="/isbn.png" class="isbn-image">
+                </div>
+
+                <p class="midashi">コメント</p>
+                <textarea class="form-control" rows="5" name="book_message"><%= @post.book_message %></textarea>
+
+                <button type="submit" class="btn btn-primary submit_btn">投稿</button>
+                <% end %>
+            </div>
+
+            <div class="return-top">
+                <%= link_to("トップに戻る","/posts/index") %>
+            </div>
+        </div>

@@ -1,0 +1,31 @@
+
+        <div class="new">
+            <div class="posts_top">
+                <p>ユーザ情報編集</p>
+            </div>
+
+            <div class="new_container">
+                <% @user.errors.full_messages.each do |message| %>
+                <div class="form-error">
+                    <%= message %>
+                </div>
+                <% end %>
+                <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+
+                <p class="midashi">ユーザ名</p>
+                <input type="text" class="form-control" name="user_name" value="<%= @user.name %>">
+
+                <p class="midashi">画像</p>
+                <input type="file" class="form-control" name="image">
+
+                <p class="midashi">E-mail</p>
+                <input type="text" class="form-control" name="email" value="<%= @user.email %>">
+
+                <button type="submit" class="btn btn-primary submit_btn">編集する</button>
+                <% end %>
+            </div>
+
+            <div class="return-top">
+                <a href="#">トップ画面に戻る</a>
+            </div>
+        </div>

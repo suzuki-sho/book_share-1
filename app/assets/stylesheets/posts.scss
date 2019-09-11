@@ -1,0 +1,553 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "utf-8";
+
+/*  本体css*/
+*{
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  font-family: 游ゴシック Medium, Yu Gothic Medium, 游ゴシック体, YuGothic, ヒラギノ角ゴ Pro, Hiragino Kaku Gothic Pro, Noto Sans Japanese, メイリオ, Meiryo, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+  color: #7b7b7b;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1  {
+  font-family: 游ゴシック;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: 游ゴシック;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.flex-right{
+  justify-content: flex-end;
+  align-item: flex-start;
+}
+
+.jouge-center{
+    align-item: center;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+/*top-wrapper*/
+.top-wrapper{
+  background-color: #343A40;
+}
+
+.top-message{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 5px 5px 5px;
+  color: #EEEEEE;
+}
+
+.smile:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f59b';
+  font-weight: 900;
+  color: white;
+  margin-right: 8px;
+}
+
+.twitter-login:before{
+  font-family: "Font Awesome 5 Brands";
+  content: '\f099';
+  color: white;
+  margin-right: 8px;
+}
+
+.login:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f2f6';
+  font-weight: 900;
+  color: white;
+  margin-right: 8px;
+  margin-left: 15px;
+}
+
+.new-post:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f0fe';
+  font-weight: 900;
+  color: white;
+  margin-right: 8px;
+  margin-left: 15px;
+}
+
+.top-logout:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f2f5';
+  font-weight: 900;
+  color: white;
+  margin-right: 8px;
+  margin-left: 15px;
+}
+
+.top-menu{
+  color: #EEEEEE;
+}
+
+.current-user{
+  color: #EEEEEE;
+}
+
+@media screen and (min-width:781px){
+  .top-right{
+    display: flex;
+  }
+}
+
+@media screen and (max-width:780px){
+  .top-wrapper p,li{
+    font-size: 12px;
+    padding: 10px 5px 0 5px;
+  }
+}
+
+
+@media screen and (max-width:480px){
+  .top-wrapper p,li{
+    font-size: 6px;
+    padding: 10px 5px 0 5px;
+  }
+
+  .smile:before{
+    margin-right: 4px;
+  }
+
+  .twitter-login:before{
+    margin-right: 4px;
+  }
+
+  .login:before{
+    margin-left: 7px;
+    margin-right: 4px;
+  }
+
+  .new-post:before{
+    margin-left: 7px;
+    margin-right: 4px;
+  }
+
+  .top-logout:before{
+    margin-left: 7px;
+    margin-right: 4px;
+  }
+}
+
+
+/*top-image*/
+.top-logo{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.top-logo img{
+  width: 420px;
+}
+
+.top-image img{
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+@media screen and (max-width:780px){
+  .top-logo img{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width:480px){
+  .top-logo img{
+    width: 200px;
+  }
+}
+
+/*top-comment*/
+
+.top-comment{
+  text-align: center;
+}
+
+.ribbon6 {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 7px 20px;
+  font-size: 18px;
+  background: #136FFF;
+  color: #FFF;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  margin: 30px 0 20px 0;
+}
+
+.ribbon6 h3 {
+  margin: 0;
+  padding: 0 30px;
+  border-top: dashed 2px rgba(255, 255, 255, 0.5);
+  border-bottom: dashed 2px rgba(255, 255, 255, 0.5);
+  line-height: 42px;
+}
+
+.ribbon6:before, .ribbon6:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon6:before {
+  top: -2px;
+  left: -2px;
+  border-width: 32px 0px 32px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon6:after {
+  top: -2px;
+  right: -2px;
+  border-width: 32px 15px 32px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+
+.box16{
+  width: 50%;
+    padding: 10px;
+    margin: 0 auto 20px;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+.box16 p {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-gradient-3d-simple {
+  display: inline-block;
+  padding: 0.5em 3em;
+  margin: 20px 0;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+}
+
+.btn-gradient-3d-simple:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+@media screen and (max-width:780px){
+  .ribbon6 h3{
+    font-size: 18px;
+  }
+
+  .box16{
+      width: 80%;
+  }
+}
+
+@media screen and (max-width:480px){
+
+  .ribbon6 h3{
+    font-size: 14px;
+  }
+
+  .box16{
+      width: 80%;
+      padding: 5px;
+  }
+  .box16 p {
+      font-size: 12px;
+  }
+
+}
+
+/*main-contents*/
+.main-contents{
+  border: 1px solid gray;
+  margin-top: 20px;
+}
+
+.main-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-wrapper{
+  padding: 15px;
+  overflow:hidden;
+}
+
+.book-title{
+  margin: 10px 0;
+}
+
+.main-message{
+  font-size: .95rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin-bottom: 0 !important;
+}
+
+.content-edit{
+  margin-right: 10px;
+}
+
+.information{
+  margin-top: 10px;
+}
+
+.left-container{
+  float: left;
+  margin-top: 20px;
+}
+
+.right-container{
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.hosoku{
+  margin: 10px 0;
+}
+
+.isbn-image{
+  width: 200px;
+  margin-top: 10px;
+}
+
+/*footer*/
+footer{
+  margin-top: 40px;
+  background-color: #343A40;
+  color: #EEEEEE;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul{
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer li{
+  margin: 0 10px;
+}
+
+/*show*/
+.show{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid gray;
+}
+
+.show-image{
+  text-align: center;
+}
+
+.show-image img{
+  width: 60%;
+}
+
+.buy{
+  text-align: center;
+}
+
+.book-title-show{
+  margin-top: 10px;
+}
+
+.btn-stitch {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+  border: dashed 1px #FFF;
+  margin: 20px 0;
+  width: 70%;
+}
+
+.btn-stitch:hover {
+  border: dotted 1px #FFF;
+}
+
+.post-user{
+  margin: 10px 0;
+}
+
+.post-time{
+  font-size: 14px;
+}
+
+.post-message{
+  padding: 40px 20px;
+  background-color: #F8F9FA;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.twitter-link{
+  margin-top: 30px;
+}
+
+.btn{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid gray;
+  border-radius: 100px;
+}
+
+.like_button{
+  color: #ff2581;
+}
+
+.like{
+  margin-top: 25px;
+}
+
+/* new */
+.new{
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+
+.posts_top{
+  background-color: #343A40;
+  text-align: center;
+  color: white;
+  padding: 6px;
+}
+
+.new_container{
+  padding: 20px;
+}
+
+.midashi{
+  padding: 0.25em 0.5em;
+  margin-top: 20px;
+  color: #494949;
+  background: transparent;
+  border-left: solid 5px #7db4e6;
+}
+
+.submit_btn{
+  font-size: .9rem;
+  border-radius: 100px;
+  background-color: white;
+  border: 2px solid gray;
+  color: #143940;
+  font-weight: 600;
+  padding: 14px 120px;
+}
+
+.form-error{
+  color: red;
+}
+
+.flash{
+  background-color: #FF9872;
+  color: #EEEEEE;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.like-btn-unlike{
+  color: #ff2581;
+  margin: 20px 10px 0 0;
+  font-size: 24px;
+}
+
+.like-btn{
+  color: #8899a6;
+  margin: 20px 10px 0 0;
+  font-size: 24px;
+}
+
+.font{
+  font-size: 40px;
+}

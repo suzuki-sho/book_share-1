@@ -1,0 +1,32 @@
+
+        <div class="new">
+            <div class="posts_top">
+                <p>編集する</p>
+            </div>
+            <div class="new_container">
+                <%= form_tag("/posts/#{@post.id}/update") do %>
+                <% @post.errors.full_messages.each do |message| %>
+                <div class="form-error">
+                    <%= message %>
+                </div>
+                <% end %>
+                <p class="midashi">本のタイトル</p>
+                <input type="text" class="form-control" name="book_title" value="<%= @post.book_title %>">
+
+                <p class="midashi">AmazonのURL</p>
+                <input type="text" class="form-control" name="amazon_url" value="<%= @post.amazon_url %>">
+
+                <p class="midashi">ISBN/ASINコード</p>
+                <input type="text" class="form-control" name="isbn_code" value="<%= @post.isbn_code %>">
+
+                <p class="midashi">コメント</p>
+                <textarea class="form-control" rows="5" name="book_message"><%= @post.book_message %></textarea>
+
+                <button type="submit" class="btn btn-primary submit_btn">編集する</button>
+                <% end %>
+            </div>
+
+            <div class="return-top">
+                <%= link_to("トップに戻る","/posts/index") %>
+            </div>
+        </div>
