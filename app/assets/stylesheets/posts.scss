@@ -164,7 +164,7 @@ li {
 
 @media screen and (max-width:480px){
   .top-wrapper p,li{
-    font-size: 6px;
+    font-size: 10px;
     padding: 10px 5px 0 5px;
   }
 
@@ -364,6 +364,7 @@ li {
 
 .content-edit{
   margin-right: 10px;
+  font-size: 16px;
 }
 
 .information{
@@ -390,6 +391,12 @@ li {
 .isbn-image{
   width: 200px;
   margin-top: 10px;
+}
+
+@media screen and (max-width:480px){
+  .main-contents{
+    margin: 20px 40px 0 40px;
+  }
 }
 
 /*footer*/

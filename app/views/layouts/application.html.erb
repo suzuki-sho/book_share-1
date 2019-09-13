@@ -5,14 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <!-- FontAwesome5 -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-        
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -67,11 +68,6 @@
   </body>
   
   <footer>
-    <ul class="flex">
-      <li>利用規約</li>
-      <li>プライバシーポリシー</li>
-      <li>お問い合わせ</li>
-    </ul>
     <p>© 2019 長岡勇輝, All Rights Reserved.</p>
   </footer>
 </html>
