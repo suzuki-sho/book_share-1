@@ -43,7 +43,7 @@
                                 <p><%= link_to(post.book_title,"/posts/#{post.id}") %></p>
                             </div>
                             <div class="main-message">
-                                <p><%= post[:book_message] %></p>
+                                <%= post[:book_message] %>
                             </div>
 
                             <div class="left-container">
@@ -63,7 +63,7 @@
                                     <%= "/user_images/#{post.user.image_name}" %>
                                 <% end %>
                                 " class="user_image3">
-                                <p class="main-user"><%= post.user.name %></p>
+                                <div class="main-user"><%= post.user.name %></div>
                             </div>
                         </div>
                     </div>
